@@ -10,8 +10,30 @@ export const fetchMovies = () => {
         method: "GET",
         url: baseUrl,
       });
+      dispatch(fetchMoviesSuccess(data.results));
     } catch (error) {
-      console.log(error);
+      dispatch(setMoviesError(error.response.data));
+    } finally {
+      dispatch(setMoviesLoading(false));
     }
+  };
+};
+
+export const fetchMoviesSuccess = (payload) => {
+  return {
+    type: FETCH_MOVIES_SUCCESS,
+    payload,
+  };
+};
+export const setMoviesError = (payload) => {
+  return {
+    type: FETCH_MOVIES_ERROR,
+    payload,
+  };
+};
+export const setMoviesLoading = (payload) => {
+  return {
+    type: FETCH_MOVIES_LOADING,
+    payload,
   };
 };
