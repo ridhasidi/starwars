@@ -20,10 +20,10 @@ export default function HomePage() {
     return <ErrorPage />;
   }
   return (
-    <section className="w-full bg-neutral-700 min-h-screen justify-center">
+    <section className="w-full bg-gray-900 min-h-screen justify-center">
       <div className="pt-5 pb-3 flex justify-center">
-        <Link to={"/"} className="text-center text-amber-400 hover:text-amber-500 p-4 m-6 text-4xl font-semibold">
-          Starwars
+        <Link to={"/"} className="text-center text-amber-400 hover:text-amber-500 p-4 m-6 text-6xl font-semibold">
+          Star Wars
         </Link>
       </div>
       <div className="flex w-full flex-wrap justify-center px-3 ">
