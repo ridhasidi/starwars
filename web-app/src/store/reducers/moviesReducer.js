@@ -1,5 +1,4 @@
-import { FETCH_CHAR_ERROR } from "../actionTypes/characterType";
-import { FETCH_MOVIES_LOADING, FETCH_MOVIES_SUCCESS } from "../actionTypes/movieType";
+import { FETCH_MOVIES_LOADING, FETCH_MOVIES_SUCCESS, FETCH_MOVIES_ERROR } from "../actionTypes/movieType";
 
 const initialState = {
   movies: [],
@@ -14,7 +13,7 @@ export default function moviesReducer(state = initialState, action) {
         ...state,
         movies: action.payload,
       };
-    case FETCH_CHAR_ERROR:
+    case FETCH_MOVIES_ERROR:
       return {
         ...state,
         error: action.payload,
